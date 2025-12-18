@@ -1,22 +1,52 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ああ弟よタイピング、君押し違うことなかれ</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>タイピングチャレンジ</h1>
-    <div id="container"> 
+    <h1>ああ弟よタイピング、君押し違うことなかれ</h1>
+    <div id="container">
         <div id="timer">タイム: 0.00秒</div>
 
         <div id="target-text">
-            </div>
+        </div>
 
-        <input type="text" id="input-area" autofocus>
+        <input type="text" id="typing-input" autofocus>
+        <input type="text" id="quiz-answer-input" style="display: none;">
 
-        <button id="start-button">スタート</button>
-
+        <div id="controls">
+            <button id="start-button">スタート</button>
+            
+        </div>
+        
         <div id="result"></div>
     </div>
+
+        <div id="rule-content">
+            <h2>📜 ルール説明</h2>
+            <p>世界に轟く名詩「君死にたまふことなかれ」の詩をローマ字でタイピングするゲームです。</p>
+            
+            <h3>入力規則</h3>
+            <ul>
+                <li>半角ローマ字でタイピングしてください。</li>
+            </ul>
+            
+            <h3>ミスについて</h3>
+            <p>タイプミスをすると、**即座にクイズが出題されます。**</p>
+            <p>クイズに正解するまでタイピングは再開できません。全角ひらがなで入力してください。</p>
+            <p>わからない問題がきたらググりなさいシンジくん。誰かのためじゃない。あなた自身の願いのために。</p>
+            
+            
+            
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,163 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    background-color: #f4f4f4;
+    color: #333; 
+}
+
+h1 {
+    color: #007bff;
+    margin-bottom: 25px;
+}
+
+#container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    
+    position: relative; 
+}
+
+#timer {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #28a745; 
+}
+
+/* style.css */
+
+#target-text {
+    font-size: 1.8em;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    /* background-color: #fafafa; ← 元の背景色は削除 */
+    border-radius: 5px;
+    text-align: left;
+    white-space: pre-wrap; 
+    min-height: 150px; 
+    max-height: 450px; 
+    overflow-y: auto; 
+    
+    /* ================================================= */
+    /* ★背景画像の設定と透過（半透明オーバーレイ）★ */
+    /* linear-gradientで70%の白（rgba(255, 255, 255, 0.7)）を画像の上に重ねる */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('Akiko_Yosano_younger-removebg-preview.png'); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: local; /* スクロールしても背景画像が一緒に動くようにする */
+    /* ================================================= */
+}
+
+/* 文字の視認性アップのための修正 */
+.char { 
+    opacity: 0.8; /* まだ打っていない文字の透明度を少し上げる */
+    transition: opacity 0.1s; 
+    color: #666; /* 色を灰色に */
+}
+.typed { 
+    opacity: 1.0; 
+    font-weight: bold; 
+    color: #000080; /* 濃い紺色に */
+}
+/* .current, .error のスタイルはそのまま */
+
+/* タイピング中の文字スタイル */
+.char { opacity: 0.3; transition: opacity 0.1s; }
+.typed { opacity: 1.0; font-weight: bold; color: #007bff; }
+.current { background-color: #ffc; border-bottom: 2px solid #ff0; }
+.error { color: red; background-color: #ffdddd; font-weight: bold; }
+
+/* タイピング入力の基本スタイル */
+#typing-input {
+    width: 90%;
+    padding: 15px;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.2s;
+    text-align: left; 
+    display: block; 
+    margin-top: 10px; /* テキストとの間に隙間を追加 */
+}
+
+#typing-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* クイズ回答入力の特殊スタイル */
+#quiz-answer-input {
+    width: 90%;
+    padding: 15px;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    text-align: center; 
+    display: none; 
+
+    /* クイズボックスの上に出現させるための特殊スタイル */
+    position: absolute; 
+    bottom: 80px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 11; 
+    width: 60%; 
+    padding: 18px; 
+    font-size: 1.6em; 
+    border: 3px solid #ffc107; 
+    background-color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#start-button {
+    padding: 10px 25px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+#start-button:hover:not(:disabled) {
+    background-color: #1e7e34;
+}
+
+#start-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+#result {
+    margin-top: 15px;
+    font-weight: bold;
+    min-height: 1.5em; 
+}
+
+/* クイズボックスのスタイル */
+#quiz-box {
+    border: 3px solid #ffc107; 
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+}
+
+#quiz-box h2 {
+    color: #ffc107;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
